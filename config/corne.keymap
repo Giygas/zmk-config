@@ -5,7 +5,7 @@
 #include "zmk-helpers/key-labels/42.h"
 
 
-// #include "combos.dtsi"  // requires layer aliases
+#include "combos.dtsi"  // requires layer aliases
 
 /* activate bluetooth */
 #define CONFIG_WIRELESS 1

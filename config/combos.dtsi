@@ -27,7 +27,7 @@ ZMK_BEHAVIOR(lpar_lbrace, macro,
 )
 
 ZMK_BEHAVIOR(rpar_rbrace, macro,
-    bindings = <&kp RPAR>, <&kp RBRC>;
+    bindings = <&kp RBRC>, <&kp RPAR>;
     wait-ms = <5>;
     tap-ms =<0>;
 )

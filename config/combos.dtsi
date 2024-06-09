@@ -19,15 +19,32 @@
 #define HRC_LPAR   &hmr_lpar_lt RS(LCTRL) 0
 #define HRC_RPAR   &hmr_rpar_gt RS(LALT) 0
 
+// Declaring behaviors for parentesis and brace
+ZMK_BEHAVIOR(lpar_lbrace, macro,
+    bindings = <&kp LPAR>, <&kp LBRC>;
+    wait-ms = <5>;
+    tap-ms =<0>;
+)
+
+ZMK_BEHAVIOR(rpar_rbrace, macro,
+    bindings = <&kp RPAR>, <&kp RBRC>;
+    wait-ms = <5>;
+    tap-ms =<0>;
+)
+
+
 ZMK_COMBO(esc,   &kp ESC,       LT4 LT3,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(tab,   &kp TAB,       LM1 LM0,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-// ZMK_COMBO(lpar,  &kp LPAR,      LT2 LT1,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-// ZMK_COMBO(rpar,  &kp RPAR,      RT1 RT2,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lpar,  &lpar_lbrace,      LT2 LT1,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rpar,  &rpar_rbrace,      RT1 RT2,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(caps_word,   &caps_word,       LM2 RM2,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
-// Advanced combos
-ZMK_COMBO(lpar,  HRC_LPAR,      RM1 RM2,     DEF     NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(rpar,  HRC_RPAR,      RM2 RM3,     DEF     NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(lt,    &kp LT,        RM1 RM2,         NAV    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(gt,    &kp GT,        RM2 RM3,         NAV    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+// // Expected number or parenthesized expression
+// ZMK_COMBO(lpar,  HRC_LPAR,      RM1 RM2,     DEF     NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+// ZMK_COMBO(rpar,  HRC_RPAR,      RM2 RM3,     DEF     NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+// ZMK_COMBO(lt,    &kp LT,        RM1 RM2,         NAV    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+// ZMK_COMBO(gt,    &kp GT,        RM2 RM3,         NAV    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
+
+

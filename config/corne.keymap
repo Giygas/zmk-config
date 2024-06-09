@@ -20,7 +20,7 @@
 
 
 #define DEF 0
-// #define NAV 1
+#define CODE 1
 // #define FN 2
 // #define NUM 3
 // #define SYS 4
@@ -73,7 +73,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 // MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
 // MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
 
-
 // CUSTOM KEYS
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
 ZMK_MOD_MORPH(smart_shft,
@@ -84,16 +83,34 @@ ZMK_MOD_MORPH(smart_shft,
     /delete-property/ ignore-modifiers;
 };
 
+// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
+ZMK_MOD_MORPH(bs_del,
+    bindings = <&kp BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    keep-mods = <MOD_RSFT>;
+)
 
 ZMK_LAYER(base,
 //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
     XXX         &kp Q         &kp W         &kp E         &kp R         &kp T        &kp Y         &kp U         &kp I         &kp O         &kp P             XXX
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-    XXX     &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G            &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L  &hmr LGUI SEMI     XXX
+    XXX     &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp G            &kp H         &hmr LCTRL J  &hmr RSHFT K  &hmr LALT L  &hmr RGUI SEMI     XXX
 //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
     XXX     &kp Z         &kp X         &kp C         &kp V         &kp B            &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLASH         XXX
 //╰──────╯ ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                        &kp A             XXX        &kp SPACE       &kp ENTER     &smart_shft   &kp SPACE
+                                             XXX      &mo CODE        &kp SPACE       &kp ENTER     &bs_del       &kp SPACE
 //                                     ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
 )
 
+
+ZMK_LAYER(code,
+//╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
+    XXX     &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT      &kp STAR      &kp LPAR      &kp RPAR      &kp MINUS     &kp EQUAL         XXX
+//├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+    XXX     &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp CARET        &kp GRAVE     &kp LBKT      &kp RBKT           XXX      &kp BSLH          XXX
+//├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+    XXX          XXX           XXX           XXX           XXX      &kp AMPS         &kp N         &kp LBRC      &kp RBRC           XXX      &kp SLASH         XXX
+//╰──────╯ ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
+                                            ___            ___           ___              ___          ___           ___
+//                                     ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
+)

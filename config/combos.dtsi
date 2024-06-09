@@ -18,3 +18,9 @@
 #define HRC_REPEAT &hml_repeat  LS(LCTRL) 0
 #define HRC_LPAR   &hmr_lpar_lt RS(LCTRL) 0
 #define HRC_RPAR   &hmr_rpar_gt RS(LALT) 0
+
+ZMK_COMBO(esc,   &kp ESC,       LT4 LT3,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(tab,   &kp TAB,       LM1 LM0,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lpar,  &kp LPAR,      LT2 LT1,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rpar,  &kp RPAR,      RT1 RT2,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(caps_word,   &caps_word,       LM2 RM2,     ALL, COMBO_TERM_FAST, COMBO_IDLE_FAST)

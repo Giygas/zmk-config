@@ -105,9 +105,9 @@ ZMK_LAYER(Base,
 
 ZMK_LAYER(Code,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    XXX          &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT      &kp STAR      &kp LPAR      &kp RPAR      &kp MINUS     &kp EQUAL          XXX
+    XXX          &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT      &kp STAR      &kp LBKT      &kp RBKT      &kp MINUS     &kp EQUAL          XXX
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    XXX          &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp CARET        &kp GRAVE     &kp LBKT      &kp RBKT      &kp SQT       &kp DQT            XXX
+    XXX          &hml LGUI A   &hml LALT S   &hml LSHFT D  &hml LCTRL F  &kp CARET        &kp GRAVE     &kp LPAR      &kp RPAR      &kp SQT       &kp DQT            XXX
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     XXX               XXX           XXX           XXX           XXX      &kp AMPS         &kp BSLH      &kp LBRC      &kp RBRC      &kp LT        &kp GT             XXX
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯

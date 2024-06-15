@@ -17,14 +17,13 @@
 #endif
 
 
-
-
 #define DEF 0
 #define CODE 1
 #define NUM 2
 #define SYS 3
-#define FN 4
-#define NAV 5
+#define NAV 4
+
+// #define FN 5
 // #define MOUSE 6
 
 

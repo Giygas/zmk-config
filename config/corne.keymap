@@ -192,6 +192,10 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 #define DSK_MGR   &kp LA(GRAVE)           // Desktop manager.
 #define VOL_DOWN  &hmr RSHFT C_VOL_DN
 
+// Conditional sys layer
+ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
+
+
 ZMK_LAYER(Base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     XXX          &kp Q         &kp W         &kp E         &kp R         &kp T            &kp Y         &kp U         &kp I         &kp O         &kp P              XXX     
@@ -231,9 +235,9 @@ ZMK_LAYER(Fn,
 
 ZMK_LAYER(Num,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬────────────────┬────────────────┬────────────────┬─────────────┬─────────────╮
-    XXX               XXX        &kp HOME       &kp UP        &kp END         XXX              XXX          &kp N7            &kp N8           &kp N9           XXX           XXX    
+    XXX               XXX          XXX            XXX          XXX            XXX              XXX          &kp N7            &kp N8           &kp N9           XXX           XXX    
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼────────────────┼────────────────┼────────────────┼─────────────┼─────────────┤
-    XXX               XXX        &kp LEFT      &kp DOWN      &kp RIGHT        XXX              XXX       &hmr LCTRL N4    &hmr RSHFT N5     &hmr LALT N6        XXX           XXX     
+    XXX            &kp LGUI      &kp LALT      &kp LSHFT     &kp LCTRL        XXX              XXX       &hmr LCTRL N4    &hmr RSHFT N5     &hmr LALT N6        XXX           XXX     
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼────────────────┼────────────────┼────────────────┼─────────────┼─────────────┤
     XXX               XXX           XXX           XXX           XXX           XXX              XXX         &kp N1            &kp N2           &kp N3           XXX           XXX      
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼────────────────┼────────────────┼────────────────┴─────────────┴─────────────╯

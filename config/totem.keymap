@@ -1,4 +1,4 @@
-#include "38.h"
+#include "zmk-helpers/key-labels/totem.h"
 #include <behaviors.dtsi>
 #include <behaviors/num_word.dtsi> // Requires auto-layer module.
 
